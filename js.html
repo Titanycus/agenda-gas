@@ -1,5 +1,20 @@
 <script>
 
+    // boton subir
+    window.addEventListener('scroll', function () {
+        if (this.window.scrollY > 500) {
+            document.getElementById('botonSubir').style.transform = "scale(1)";
+        }
+        if (this.window.scrollY < 500) {
+            document.getElementById('botonSubir').style.transform = "scale(0)";
+        }
+    });
+
+    function subirArriba() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
     function insertarContacto() {
         // obtener datos
         let nombre = document.getElementById('nombre').value;
@@ -96,14 +111,13 @@
                 let celda = document.createElement('td');
                 celda.textContent = obj[i][j];
                 fila.appendChild(celda);
-                
+
                 // si es el quinto elemento de la fila
-                if(j == 4 )
-                {
+                if (j == 4) {
                     // creamos la imagen
                     celda.textContent = '';
                     let imagen = document.createElement('img');
-                    imagen.classList.add('img-fluid','rounded');
+                    imagen.classList.add('img-fluid', 'rounded');
                     imagen.src = obj[i][j];
                     celda.appendChild(imagen);
                 }
@@ -332,5 +346,5 @@
         crearTablaContactos();
     }
 
-    
+
 </script>
