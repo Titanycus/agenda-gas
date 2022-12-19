@@ -68,7 +68,7 @@
 
         mostrar();
     }
-  
+   
     // MODIFICAR CONTACTO
     function modificarContacto(numFila) {
         limpiar();
@@ -92,8 +92,7 @@
     function contactoModificadoCorrectamente() {
         // mostrar notificacion
         crearNotificacionContacto('Contacto modificado correctamente', 'MODIFICADO OK');
-        eliminarLoader();
-        crearTablaContactos();
+        mostrar();
     }
 
     function contactoModificadoError() {
